@@ -1,0 +1,6 @@
+.cities-background {
+    min-height: 110vh;
+    background-image: url('../assets/images/backgroundHome.jpg'); /* Ajusta la ruta */
+    background-size: cover;
+    background-position: center;
+}

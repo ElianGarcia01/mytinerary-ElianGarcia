@@ -1,15 +1,16 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
-import StandardLayout from './layouts/StandardLayout'
+import HomeLayout from './layouts/HomeLayout'
+import CitiesLayout from "./layouts/CitiesLayout";
 import Home from './pages/Home'
-import Citites from './pages/Cities'
+import Cities from './pages/Cities'
 
 function App() {
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <StandardLayout />,
+      element: <HomeLayout />,
       children: [
         {
           path: "",
@@ -21,10 +22,16 @@ function App() {
         },
         {
           path: "cities",
-          element: <Citites />
+          element: <CitiesLayout />,
+          children: [
+            {
+              path: "",
+              element: <Cities />
+            }
+          ]
         }
       ]
-    }
+    },
   ])
 
 
