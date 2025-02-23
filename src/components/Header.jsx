@@ -1,19 +1,64 @@
+import { useState } from "react"
 import ButtonLogin from "./ButtonLogin"
 
 function Header() {
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const toggleMenu = () => { setIsMenuOpen(!isMenuOpen) }
+
+
     return (
-        <>
-            <nav className="fixed top-0 left-0 w-full bg-slate-950/65 backdrop-blur-md text-white h-18 py-2 z-10 flex justify-center">
-                <div className="container flex justify-between items-center h-full px-10 ">
-                    <h1 className="text-3xl font-bold">My Tinerary</h1>
-                    <ul className="flex justify-center items-center gap-4 h-full">
+        <nav className="fixed top-0 left-0 w-full bg-slate-950/65 backdrop-blur-md text-white h-18 py-2 z-10 flex justify-center">
+
+            <div className="container px-4 flex justify-between items-center h-full md:px-10 ">
+                {/* LOGO */}
+                <div>
+                    <a href="#" className="text-xl md:text-2xl lg:text-3xl font-bold">My Tinerary</a>
+                </div>
+
+                {/* Menu de navegacion visible ne pantallas grandes */}
+                <ul className="hidden md:flex space-x-4 justify-center items-center gap-4 h-full">
+                    <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Home</a></li>
+                    <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Cities</a></li>
+                    < ButtonLogin />
+                </ul>
+
+
+                {/* Ícono de hamburguesa (visible en pantallas pequeñas) */}
+                <div className="md:hidden">
+                    <button onClick={toggleMenu} className="text-white focus:outline-none">
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M4 6h16M4 12h16m-7 6h7"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+
+            {/* Menú desplegable (visible en pantallas pequeñas) */}
+            {isMenuOpen && (
+                <div className={`md:hidden bg-slate-950/65 backdrop-blur-md transition-all duration-300 ${isMenuOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
+                    } overflow-hidden absolute top-16 left-0 w-full z-20`}>
+                    <ul className="flex flex-col space-y-4 p-4">
                         <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Home</a></li>
                         <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Cities</a></li>
                         < ButtonLogin />
                     </ul>
                 </div>
-            </nav>
-        </>
+            )}
+        </nav>
     )
 }
 
