@@ -82,18 +82,18 @@ const itineraries = [
 ];
 
 const groupItineraries = (items, size) => {
-  const groups = [];
+  const groups = []
   for (let i = 0; i < items.length; i += size) {
-    groups.push(items.slice(i, i + size));
+    groups.push(items.slice(i, i + size))
   }
-  return groups;
+  return groups
 };
 
 const groupedItineraries = groupItineraries(itineraries, 4);
 
 const Carousel = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto mt-8">
+    <div className="w-full max-w-4xl mx-auto mt-8 h-full">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={20}
@@ -101,22 +101,22 @@ const Carousel = () => {
         navigation
         pagination={{ clickable: true }}
         loop={true}
-        className="w-full"
+        className="w-full h-full"
       >
         {groupedItineraries.map((group, index) => (
-          <SwiperSlide key={index} className="p-4">
-            <div className="grid grid-cols-2 gap-4">
+          <SwiperSlide key={index} className="px-4 py-2">
+            <div className="grid grid-cols-2 gap-6 h-full">
               {group.map((item) => (
-                <div key={item.id} className="relative">
+                <div key={item.id} className="relative h-full">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-40 object-cover rounded-lg"
+                    className="w-full h-64 object-cover rounded-3xl"
                   />
-                  <div className="absolute bottom-2 left-2 bg-blue-600 text-white px-2 py-1 rounded">
+                  <div className="absolute bottom-0 left-0 bg-blue-600 text-white px-2 py-1 rounded-bl-3xl rounded-tr-2xl">
                     {item.name}
                   </div>
-                  <div className="absolute top-2 right-2 bg-black/50 text-white px-2 py-1 rounded">
+                  <div className="absolute top-0 right-0 bg-black/50 text-white px-2 py-1 rounded-tr-3xl rounded-bl-2xl">
                     ❤️ {item.likes}
                   </div>
                 </div>
@@ -129,4 +129,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Carousel
