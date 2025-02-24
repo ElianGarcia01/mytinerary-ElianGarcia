@@ -1,0 +1,16 @@
+/* Cambiar color de las flechas a blanco */
+.swiper-button-prev, 
+.swiper-button-next {
+  color: white !important; /* Cambia el color de las flechas */
+}
+
+/* Cambiar color de los puntos de paginación a blanco */
+.swiper-pagination-bullet {
+  background-color: white !important; /* Color de los puntos inactivos */
+}
+
+/* Cambiar el color del punto activo a un blanco más intenso */
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+  opacity: 1; /* Asegura que el punto activo sea más visible */
+}

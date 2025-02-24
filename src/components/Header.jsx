@@ -3,9 +3,23 @@ import ButtonLogin from "./ButtonLogin"
 
 function Header() {
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+    // ESTADO Y FUNCION PARA ABRIR Y CERRAR EL NAVBAR EN PANTALLAS PEQUEÑAS
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
     const toggleMenu = () => { setIsMenuOpen(!isMenuOpen) }
+
+    // ARREGLO DE OBJETOS DE LAS RUTAS
+
+    const routes = [
+        {
+            path: "/",
+            name: "Home",
+        },
+        {
+            path: "/cities",
+            name: "Cities",
+        },
+    ]
 
 
     return (
@@ -19,9 +33,15 @@ function Header() {
 
                 {/* Menu de navegacion visible ne pantallas grandes */}
                 <ul className="hidden md:flex space-x-4 justify-center items-center gap-4 h-full">
-                    <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Home</a></li>
-                    <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Cities</a></li>
+                    {routes.map((route) => (
+                        <li className="hover:text-gray-300 text-xl font-bold" key={route.path}><a href={route.path}>{route.name}</a></li>
+                    ))}
+
                     < ButtonLogin />
+
+
+                    {/* <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Home</a></li>
+                    <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Cities</a></li> */}
                 </ul>
 
 
