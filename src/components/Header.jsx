@@ -26,9 +26,10 @@ function Header() {
         <nav className="fixed top-0 left-0 w-full bg-slate-950/65 backdrop-blur-md text-white h-18 py-2 z-10 flex justify-center">
 
             <div className="container px-4 flex justify-between items-center h-full md:px-10 ">
+                
                 {/* LOGO */}
                 <div>
-                    <a href="#" className="text-xl md:text-2xl lg:text-3xl font-bold">My Tinerary</a>
+                    <a href="" className="text-xl md:text-2xl lg:text-3xl font-bold">My Tinerary</a>
                 </div>
 
                 {/* Menu de navegacion visible ne pantallas grandes */}
@@ -36,12 +37,7 @@ function Header() {
                     {routes.map((route) => (
                         <li className="hover:text-gray-300 text-xl font-bold" key={route.path}><a href={route.path}>{route.name}</a></li>
                     ))}
-
                     < ButtonLogin />
-
-
-                    {/* <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Home</a></li>
-                    <li><a href="#" className="hover:text-gray-300 text-xl font-bold">Cities</a></li> */}
                 </ul>
 
 

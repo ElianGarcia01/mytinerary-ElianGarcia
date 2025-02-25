@@ -1,8 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
 import "../components/Carousel.css"
 
 
@@ -79,7 +79,7 @@ const itineraries = [
     name: "Baia do Sancho",
     likes: 41,
   },
-];
+]
 
 const groupItineraries = (items, size) => {
   const groups = []
@@ -87,9 +87,9 @@ const groupItineraries = (items, size) => {
     groups.push(items.slice(i, i + size))
   }
   return groups
-};
+}
 
-const groupedItineraries = groupItineraries(itineraries, 4);
+const groupedItineraries = groupItineraries(itineraries, 4)
 
 const Carousel = () => {
   return (
