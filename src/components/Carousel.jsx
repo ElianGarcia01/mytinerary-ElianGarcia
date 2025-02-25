@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination } from "swiper/modules"
+import { Navigation, Pagination, Autoplay } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -93,19 +93,20 @@ const groupedItineraries = groupItineraries(itineraries, 4)
 
 const Carousel = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto mt-8 h-full">
+    <div className="w-full max-w-7xl mx-auto mt-8 h-full">
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={20}
         slidesPerView={1} // Un slide visible a la vez
         navigation
         pagination={{ clickable: true }}
         loop={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }} // Configura el autoplay
         className="w-full h-full"
       >
         {groupedItineraries.map((group, index) => (
           <SwiperSlide key={index} className="px-4 py-2">
-            <div className="grid grid-cols-2 gap-6 h-full">
+            <div className="grid grid-cols-4 gap-6 h-full">
               {group.map((item) => (
                 <div key={item.id} className="relative h-full">
                   <img
@@ -113,12 +114,12 @@ const Carousel = () => {
                     alt={item.name}
                     className="w-full h-64 object-cover rounded-3xl"
                   />
-                  <div className="absolute bottom-0 left-0 bg-blue-600 text-white px-2 py-1 rounded-bl-3xl rounded-tr-2xl">
+                  <button className="absolute bottom-0 left-0 bg-blue-600 text-white px-2 py-1 rounded-bl-3xl rounded-tr-2xl cursor-pointer">
                     {item.name}
-                  </div>
-                  <div className="absolute top-0 right-0 bg-black/50 text-white px-2 py-1 rounded-tr-3xl rounded-bl-2xl">
+                  </button>
+                  <button className="absolute top-0 right-0 bg-black/50 text-white px-2 py-1 rounded-tr-3xl rounded-bl-2xl cursor-pointer">
                     ❤️ {item.likes}
-                  </div>
+                  </button>
                 </div>
               ))}
             </div>

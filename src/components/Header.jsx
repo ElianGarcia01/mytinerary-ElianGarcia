@@ -9,7 +9,6 @@ function Header() {
     const toggleMenu = () => { setIsMenuOpen(!isMenuOpen) }
 
     // ARREGLO DE OBJETOS DE LAS RUTAS
-
     const routes = [
         {
             path: "/",
@@ -23,7 +22,7 @@ function Header() {
 
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-slate-950/65 backdrop-blur-md text-white h-18 py-2 z-10 flex justify-center">
+        <nav className="fixed top-0 left-0 w-full bg-[#8B5A2B]/20 backdrop-blur-md text-white h-18 py-2 z-10 flex justify-center">
 
             <div className="container px-4 flex justify-between items-center h-full md:px-10 ">
                 
