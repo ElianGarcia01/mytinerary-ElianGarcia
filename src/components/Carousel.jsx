@@ -52,7 +52,7 @@ const Carousel = () => {
         className="w-full h-full"
       >
         {itineraries.map((item) => (
-          <SwiperSlide key={item.id} className="px-6 py-8">
+          <SwiperSlide key={item.id} className="px-8 md:px-3.5 py-8">
             <div className="relative h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
               <img
                 src={item.image}
