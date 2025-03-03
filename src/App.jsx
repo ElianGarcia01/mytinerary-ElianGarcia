@@ -1,10 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import HomeLayout from './layouts/HomeLayout'
-import CitiesLayout from "./layouts/CitiesLayout";
 import Home from './pages/Home'
 import Cities from './pages/Cities'
-import NotFound from './pages/NotFound';
+import NotFound from './pages/NotFound'
 
 function App() {
 
@@ -23,13 +22,7 @@ function App() {
         },
         {
           path: "cities",
-          element: <CitiesLayout />,
-          children: [
-            {
-              path: "",
-              element: <Cities />
-            }
-          ]
+          element: <Cities />
         },
       ]
     },
