@@ -117,7 +117,7 @@ const Carousel = () => {
         className="w-full h-full"
       >
         {groupedItineraries.map((group, index) => (
-          <SwiperSlide key={index} className="px-8 py-6">
+          <SwiperSlide key={index} className="px-6 py-8">
             <div className="grid grid-cols-4 gap-6 h-full">
               {group.map((item) => (
                 <div key={item.id} className="relative h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">

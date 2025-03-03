@@ -2,8 +2,16 @@ import Carousel from "../components/Carousel"
 import "./Home.css"
 import Rowing from "../assets/images/Rowing.jpg"
 import HomeBackground from "../assets/images/HomeBackground.jpg"
+import { useNavigate } from "react-router-dom"
 
 export default function Home() {
+
+    const navigate = useNavigate()
+
+    function handleNavigate() {
+        navigate("/cities")
+    }
+
     return (
         <>
             {/* HERO SECTION */}
@@ -17,10 +25,10 @@ export default function Home() {
                     <p className="text-gray-200 text-lg sm:text-2xl md:text-3xl font-stretch-ultra-expanded max-w-xl mx-auto drop-shadow-md italic">
                         Find your perfect trip, designed by insiders who know and love their cities!
                     </p>
-                    <a href="" className="text-black mt-8 text-xl w-48 bg-white/90 transition px-6 py-3
-                    rounded-lg font-bold shadow-lg blink-effect">
+                    <button onClick={handleNavigate} className="text-black mt-8 text-xl w-48 bg-white/90 hover:bg-white transition px-6 py-3
+                    rounded-lg font-bold shadow-lg blink-effect cursor-pointer">
                         Explore Now!
-                    </a>
+                    </button>
                 </div>
             </section>
 

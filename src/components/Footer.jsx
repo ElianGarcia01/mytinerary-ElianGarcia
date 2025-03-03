@@ -21,25 +21,20 @@ const Footer = () => {
 
                 <div>
                     <ul className="space-y-4">
-                        <li>
-                            <a className="font-bold text-3xl" href="">Contact Us</a>
+                        <li className="font-bold text-3xl">Contact Us
                         </li>
-                        <li>
-                            <a href="">123 Street, City</a>
+                        <li>123 Street, City
                         </li>
-                        <li>
-                            <a href="">Email: contact@mytinerary.com</a>
+                        <li>Email: contact@mytinerary.com
                         </li>
-                        <li>
-                            <a href="">Phone: (123) 456-7890</a>
+                        <li>Phone: (123) 456-7890
                         </li>
                     </ul>
                 </div>
 
                 <div>
                     <ul className="space-y-4">
-                        <li>
-                            <a className="font-bold text-3xl" href="">Follow Us</a>
+                        <li className="font-bold text-3xl">Follow Us
                         </li>
                         <li>
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
