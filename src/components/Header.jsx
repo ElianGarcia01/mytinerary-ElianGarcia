@@ -23,7 +23,7 @@ function Header() {
 
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-black/30 backdrop-blur-md lg:bg-black/15 text-white h-18 py-2 z-10 flex justify-center font-stretch-normal">
+        <nav className="fixed top-0 left-0 w-full bg-black/35 backdrop-blur-md lg:bg-black/15 text-white h-18 py-2 z-10 flex justify-center font-stretch-normal">
 
             <div className="container px-4 flex justify-between items-center h-full md:px-10 ">
 
@@ -68,7 +68,7 @@ function Header() {
 
             {/* Menú desplegable (visible en pantallas pequeñas) */}
             {isMenuOpen && (
-                <div className={`md:hidden bg-black/5 backdrop-blur-md transition-all duration-300 ${isMenuOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
+                <div className={`md:hidden bg-black/35 backdrop-blur-md transition-all duration-300 ${isMenuOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
                     } overflow-hidden absolute top-16 left-0 w-full z-20`}>
                     <ul className="flex flex-col space-y-4 p-4">
                         {routes.map((route) => (

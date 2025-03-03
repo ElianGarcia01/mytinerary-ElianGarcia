@@ -4,11 +4,11 @@ const Footer = () => {
 
     return (
         <>
-            <div className="border-t-2 border-black bg-black text-white flex justify-between flex-wrap gap-8 px-6 py-4 md:justify-around md:p-8">
+            <div className="text-md border-black bg-black text-white flex justify-between flex-wrap gap-8 px-6 py-4 md:justify-around md:p-8">
                 <div>
                     <ul className="space-y-4">
                         <li>
-                            <a className="font-bold text-3xl" href="">Home</a>
+                            <a className="font-bold text-xl md:text-3xl" href="">Home</a>
                         </li>
                         <li>
                             <a href="">Cities</a>
@@ -21,7 +21,7 @@ const Footer = () => {
 
                 <div>
                     <ul className="space-y-4">
-                        <li className="font-bold text-3xl">Contact Us
+                        <li className="font-bold text-xl md:text-3xl">Contact Us
                         </li>
                         <li>123 Street, City
                         </li>
@@ -34,7 +34,7 @@ const Footer = () => {
 
                 <div>
                     <ul className="space-y-4">
-                        <li className="font-bold text-3xl">Follow Us
+                        <li className="font-bold text-xl md:text-3xl">Follow Us
                         </li>
                         <li>
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">

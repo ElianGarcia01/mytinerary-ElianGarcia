@@ -38,15 +38,15 @@ export default function Home() {
 
                 {/* CAROUSEL POPULAR ITINERARIES */}
                 <section className="text-center rounded-2xl container shadow-2xl">
-                    <h2 className="text-3xl md:text-4xl text-black">Popular Itineraries</h2>
-                    <div className="mt-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl text-black">Popular Itineraries</h2>
+                    <div>
                         <Carousel />
                     </div>
                 </section>
 
                 {/* FEATURED DESTINATIONS */}
                 <section className="rounded-2xl container shadow-2xl p-6 w-full">
-                    <h2 className="text-center text-3xl md:text-4xl mb-8">Top Destinations</h2>
+                    <h2 className="text-center text-2xl sm:text-3xl md:text-4xl mb-8">Top Destinations</h2>
                     <div className="flex flex-col-reverse md:flex-row-reverse justify-center items-center gap-4">
                         <div className="flex flex-col gap-8 mt-8 text-center">
                             <div className="bg-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition">

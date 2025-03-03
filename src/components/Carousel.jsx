@@ -34,7 +34,7 @@ const itineraries = [
 
 const Carousel = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto mt-8 h-full">
+    <div className="w-full max-w-7xl mx-auto mt-2 h-full">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={5}
@@ -53,7 +53,7 @@ const Carousel = () => {
       >
         {itineraries.map((item) => (
           <SwiperSlide key={item.id} className="px-8 md:px-3.5 py-8">
-            <div className="relative h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+            <div className="relative h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl text-md">
               <img
                 src={item.image}
                 alt={item.name}
