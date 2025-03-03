@@ -4,6 +4,7 @@ import HomeLayout from './layouts/HomeLayout'
 import CitiesLayout from "./layouts/CitiesLayout";
 import Home from './pages/Home'
 import Cities from './pages/Cities'
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -29,8 +30,12 @@ function App() {
               element: <Cities />
             }
           ]
-        }
+        },
       ]
+    },
+    {
+      path: "*",
+      element: <NotFound />
     },
   ])
 

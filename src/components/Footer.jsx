@@ -1,4 +1,5 @@
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
 
@@ -8,13 +9,13 @@ const Footer = () => {
                 <div>
                     <ul className="space-y-4">
                         <li>
-                            <a className="font-bold text-xl md:text-3xl" href="">Home</a>
+                            <NavLink to="/" className="font-bold text-xl md:text-3xl">Home</NavLink>
                         </li>
                         <li>
-                            <a href="">Cities</a>
+                            <NavLink to="/cities">Cities</NavLink>
                         </li>
                         <li>
-                            <a href="">Login</a>
+                            <NavLink to="/">Login</NavLink>
                         </li>
                     </ul>
                 </div>
