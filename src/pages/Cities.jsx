@@ -11,7 +11,7 @@ export default function Cities() {
                 <div className="absolute inset-0 flex flex-col justify-center items-center">
 
                     <h1 className="text-gray-100 font-stretch-normal text-2xl md:text-5xl mb-8">
-                        Under Maintance
+                        Under Maintenance
                     </h1>
 
                     {/* Círculo de carga (skeleton) */}
