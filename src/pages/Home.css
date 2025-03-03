@@ -17,3 +17,19 @@
     background: rgba(0, 0, 0, 0.4);
     /* Capa oscura semitransparente */
 }
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.blink-effect {
+    animation: blink 3s infinite;
+}
