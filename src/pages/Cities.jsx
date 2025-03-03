@@ -1,4 +1,4 @@
-import backgroundCities from "../assets/images/backgroundCities.jpg";
+import backgroundCities from "../assets/images/CitiesBackground.jpg"
 
 export default function Cities() {
     return (
@@ -19,5 +19,5 @@ export default function Cities() {
                 </div>
             </section>
         </>
-    );
+    )
 }
