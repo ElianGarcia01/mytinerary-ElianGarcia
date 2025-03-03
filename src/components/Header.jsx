@@ -32,7 +32,7 @@ function Header() {
                     <a href="" className="text-xl md:text-2xl lg:text-3xl">My Tinerary</a>
                 </div>
 
-                {/* Menu de navegacion visible ne pantallas grandes */}
+                {/* Menu de navegacion visible en pantallas grandes */}
                 <ul className="hidden md:flex space-x-4 justify-center items-center gap-4 h-full">
                     {routes.map((route) => (
                         <li className="text-xl" key={route.path}>
@@ -72,7 +72,10 @@ function Header() {
                     } overflow-hidden absolute top-16 left-0 w-full z-20`}>
                     <ul className="flex flex-col space-y-4 p-4">
                         {routes.map((route) => (
-                            <li className="hover:text-gray-300 text-xl font-bold" key={route.path}><a href={route.path}>{route.name}</a></li>
+                            <li className="hover:text-gray-300 text-xl font-bold" key={route.path}>
+                                <NavLink to={route.path} className={({
+                                    isActive }) => (isActive ? "text-gray-300" : "text-white")} >{route.name}</NavLink>
+                            </li>
                         ))}
                         < ButtonLogin />
                     </ul>

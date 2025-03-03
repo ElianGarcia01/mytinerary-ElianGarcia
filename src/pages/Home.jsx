@@ -15,12 +15,12 @@ export default function Home() {
     return (
         <>
             {/* HERO SECTION */}
-            <section className="h-[100vh] md:h-[110vh] font-stretch-normal relative">
+            <section className="h-screen max-h-[100vh] w-full object-cover">
                 <img src={HomeBackground} alt="" className="h-full w-full shadow-2xl object-cover" />
 
                 <div className="absolute inset-0 bg-black/35 md:bg-black/25"></div>
 
-                <div className=" text-center absolute top-56 md:top-36 md:right-10 flex flex-col justify-self-start items-center space-y-24 md:space-y-20">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center space-y-12 sm:space-y-16">
                     <h1 className="text-gray-100 font-stretch-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">My Tineraries</h1>
                     <p className="text-gray-200 text-lg sm:text-2xl md:text-3xl font-stretch-ultra-expanded max-w-xl mx-auto drop-shadow-md italic">
                         Find your perfect trip, designed by insiders who know and love their cities!
@@ -62,7 +62,7 @@ export default function Home() {
                                 <p className="text-gray-600">Experience the city that never sleeps with its iconic skyline and vibrant culture.</p>
                             </div>
                         </div>
-                        <div className="w-2xl md:w-1/2 flex justify-center items-center">
+                        <div className="w-full max-w-[18rem] md:max-w-[24rem] flex justify-center items-center">
                             <img src={Rowing} alt="" className="rounded-xl h-full w-72 object-center shadow-2xl" />
                         </div>
                     </div>
