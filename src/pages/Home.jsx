@@ -1,46 +1,58 @@
 import Carousel from "../components/Carousel"
 import "./Home.css"
-
+import Rowing from "../assets/images/Rowing.jpg"
 
 export default function Home() {
     return (
         <>
-
-            {/* CALL ACTION */}
-            <div className="home-background flex flex-col justify-center items-center relative">
-            </div>
-            <section className="space-y-8 text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <h1 className="text-gray-100 font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">My Tineraries</h1>
-                <p className="text-gray-100 text-xl sm:text-2xl md:text-3xl font-sans font-extralight">
-                    Find your perfect trip, designed by insiders who know and love their cities!
-                </p>
-                <a href="" className="text-gray-100 text-md sm:text-2xl bg-slate-900/10 hover:bg-[#3E6B48]/80 backdrop-blur-md py-2 px-4 rounded-xl font-serif">
-                    Explore Now!
-                </a>
+            {/* HERO SECTION */}
+            <section className="home-background md:h-[110vh] flex flex-col justify-center items-center h-screen font-stretch-normal">
+                <div className="space-y-24 text-center absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <h1 className="text-gray-100 font-stretch-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">My Tineraries</h1>
+                    <p className="text-gray-200 text-lg sm:text-2xl md:text-3xl font-stretch-ultra-expanded max-w-xl mx-auto drop-shadow-md italic">
+                        Find your perfect trip, designed by insiders who know and love their cities!
+                    </p>
+                    <a href="#" className="text-white text-lg sm:text-xl bg-gray-200/10 hover:bg-black transition px-6 py-3 rounded-lg font-semibold shadow-lg">
+                        Explore Now!
+                    </a>
+                </div>
             </section>
 
 
-            {/* SECCION MAIN HOME */}
-            <div>
+            {/* MAIN CONTENT */}
+            <div className="w-full py-12 space-y-16 bg-white text-black flex flex-col justify-between items-center">
 
-                {/* CAROUSEL */}
-                <div className="h-full mt-4">
-                    <h2 className="text-center font-bold text-3xl text-[#2C2C2C]">Popular Tineraries</h2>
-                    <Carousel></Carousel>
-                </div>
+                {/* CAROUSEL POPULAR ITINERARIES */}
+                <section className="text-center rounded-2xl container shadow-2xl">
+                    <h2 className="text-4xl text-black">Popular Itineraries</h2>
+                    <div className="mt-6">
+                        <Carousel />
+                    </div>
+                </section>
 
-                {/* <div className="min-h-screen flex flex-col-reverse justify-center items-center lg:max-h-screen lg:flex-row lg:justify-center lg:space-x-6 lg:items-center">
-
-                </div> */}
-
-                                 {/* CARD */}
-                    {/* <div className="bg-[#f6efe5] h-full w-96 p-8 rounded-xl flex flex-col justify-center space-y-14 mt-16 shadow-2xl">
-                        <h4 className="text-[#2C2C2C] text-center text-4xl font-bold">Find the perfect destination</h4>
-                        <p className="text-[#2C2C2C] text-2xl">Our app will help you find the perfect path for your next trip. With an easy-to-use interface and a host of itinerary options, planning your next trip has never been easier.</p>
-                        <button className="bg-[#3E6B48] hover:bg-[#3E6B48]/80 transition 
-                        text-white p-3 rounded-lg font-bold text-xl cursor-pointer">View More</button>
-                    </div> */}
-
+                {/* FEATURED DESTINATIONS */}
+                <section className="rounded-2xl container shadow-2xl p-6 w-full">
+                    <h2 className="text-center text-4xl mb-8">Top Destinations</h2>
+                    <div className="flex flex-row-reverse justify-center gap-4">
+                        <div className="flex flex-col gap-8 mt-8 text-center">
+                            <div className="bg-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+                                <h3 className="text-xl font-semibold text-gray-800">Paris, France</h3>
+                                <p className="text-gray-600">Explore the city of love with its rich culture and breathtaking landmarks.</p>
+                            </div>
+                            <div className="bg-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+                                <h3 className="text-xl font-semibold text-gray-800">Tokyo, Japan</h3>
+                                <p className="text-gray-600">Discover a perfect blend of modernity and tradition in Japan’s capital.</p>
+                            </div>
+                            <div className="bg-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+                                <h3 className="text-xl font-semibold text-gray-800">New York, USA</h3>
+                                <p className="text-gray-600">Experience the city that never sleeps with its iconic skyline and vibrant culture.</p>
+                            </div>
+                        </div>
+                        <div className="w-1/2 flex justify-center items-center">
+                            <img src={Rowing} alt="" className="rounded-xl h-full w-72 object-center" />
+                        </div>
+                    </div>
+                </section>
             </div>
         </>
     )

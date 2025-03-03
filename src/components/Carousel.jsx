@@ -4,82 +4,94 @@ import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "../components/Carousel.css"
+import Eiffel from "../assets/itineraries/Eiffel.jpg"
+import BigBen from "../assets/itineraries/BigBen.jpg"
+import Coliseo from "../assets/itineraries/Coliseo.jpg"
+import Estatua from "../assets/itineraries/Estatua.jpg"
+import TorreTokio from "../assets/itineraries/TorreTokio.jpg"
+import MachuPicchu from "../assets/itineraries/MachuPicchu.jpg"
+import BurjKhalifa from "../assets/itineraries/BurjKhalifa.jpg"
+import ÓperaSídney from "../assets/itineraries/ÓperaSídney.jpg"
+import SagradaFamilia from "../assets/itineraries/SagradaFamilia.jpg"
+import TajMahal from "../assets/itineraries/TajMahal.jpg"
+import CristoRedentor from "../assets/itineraries/CristoRedentor.jpg"
+import GranMuralla from "../assets/itineraries/GranMuralla.jpg"
 
 
 const itineraries = [
   {
     id: 1,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Matira Beach",
-    likes: 33,
+    image: Eiffel,
+    name: "Torre Eiffel, París",
+    likes: 120,
   },
   {
     id: 2,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Veligandu Island Beach",
-    likes: 28,
+    image: BigBen,
+    name: "Big Ben, Londres",
+    likes: 95,
   },
   {
     id: 3,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Adventure Time",
-    likes: 28,
+    image: Coliseo,
+    name: "Coliseo, Roma",
+    likes: 110,
   },
   {
     id: 4,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Tsunami Monument",
-    likes: 27,
+    image: Estatua,
+    name: "Estatua de la Libertad, Nueva York",
+    likes: 150,
   },
   {
     id: 5,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Bora Bora",
-    likes: 40,
+    image: TorreTokio,
+    name: "Torre de Tokio, Tokio",
+    likes: 88,
   },
   {
     id: 6,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Maya Bay",
-    likes: 35,
+    image: ÓperaSídney,
+    name: "Ópera de Sídney, Sídney",
+    likes: 130,
   },
   {
     id: 7,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Whitehaven Beach",
-    likes: 38,
+    image: MachuPicchu,
+    name: "Machu Picchu, Cusco",
+    likes: 200,
   },
   {
     id: 8,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Anse Lazio",
-    likes: 36,
+    image: BurjKhalifa,
+    name: "Burj Khalifa, Dubái",
+    likes: 140,
   },
   {
     id: 9,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Navagio Beach",
-    likes: 42,
+    image: SagradaFamilia,
+    name: "Sagrada Familia, Barcelona",
+    likes: 115,
   },
   {
     id: 10,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Pink Sands Beach",
-    likes: 39,
+    image: TajMahal,
+    name: "Taj Mahal, Agra",
+    likes: 180,
   },
   {
     id: 11,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Seven Mile Beach",
-    likes: 37,
+    image: CristoRedentor,
+    name: "Cristo Redentor, Río de Janeiro",
+    likes: 160,
   },
   {
     id: 12,
-    image: "https://www.celebritycruises.com/blog/content/uploads/2023/03/most-modern-cities-in-the-world-new-york-city-hero.jpg",
-    name: "Baia do Sancho",
-    likes: 41,
+    image: GranMuralla,
+    name: "Gran Muralla China, Beijing",
+    likes: 170,
   },
-]
+];
 
 const groupItineraries = (items, size) => {
   const groups = []
@@ -108,16 +120,16 @@ const Carousel = () => {
           <SwiperSlide key={index} className="px-4 py-2">
             <div className="grid grid-cols-4 gap-6 h-full">
               {group.map((item) => (
-                <div key={item.id} className="relative h-full">
+                <div key={item.id} className="relative h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-64 object-cover rounded-3xl"
+                    className="w-full h-96 object-cover rounded-xl"
                   />
-                  <button className="absolute bottom-0 left-0 bg-blue-600 text-white px-2 py-1 rounded-bl-3xl rounded-tr-2xl cursor-pointer">
+                  <button className="absolute bottom-0 left-0 bg-black text-white px-2 py-1 rounded-bl-xl rounded-tr-2xl cursor-pointer">
                     {item.name}
                   </button>
-                  <button className="absolute top-0 right-0 bg-black/50 text-white px-2 py-1 rounded-tr-3xl rounded-bl-2xl cursor-pointer">
+                  <button className="absolute top-0 right-0 bg-black/50 text-white px-2 py-1 rounded-tr-xl rounded-bl-2xl cursor-pointer">
                     ❤️ {item.likes}
                   </button>
                 </div>

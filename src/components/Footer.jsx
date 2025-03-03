@@ -4,7 +4,7 @@ const Footer = () => {
 
     return (
         <>
-            <div className="border-t-2 border-black bg-[#2E4A38] flex justify-around text-gray-300 p-8">
+            <div className="border-t-2 border-black bg-black text-white flex justify-between flex-wrap gap-8 px-6 py-4 md:justify-around md:p-8">
                 <div>
                     <ul className="space-y-4">
                         <li>
