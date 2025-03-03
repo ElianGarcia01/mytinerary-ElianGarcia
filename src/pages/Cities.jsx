@@ -9,9 +9,9 @@ export default function Cities() {
                 <div className="absolute inset-0 bg-black/35"></div>
 
                 <div className="absolute inset-0 flex flex-col justify-center items-center">
-                    
+
                     <h1 className="text-gray-100 font-stretch-normal text-2xl md:text-5xl mb-8">
-                        En mantenimiento
+                        Under Maintance
                     </h1>
 
                     {/* Círculo de carga (skeleton) */}
