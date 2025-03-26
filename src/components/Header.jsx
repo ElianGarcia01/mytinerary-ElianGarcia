@@ -12,11 +12,11 @@ function Header() {
     // ARREGLO DE OBJETOS, RUTAS
     const routes = [
         {
-            path: "/",
+            path: "",
             name: "Home",
         },
         {
-            path: "/cities",
+            path: "cities",
             name: "Cities",
         },
     ]

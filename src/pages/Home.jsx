@@ -1,4 +1,4 @@
-import Carousel from "../components/Carousel"
+import Carousel from "../components/Carousel/Carousel"
 import "./Home.css"
 import Rowing from "../assets/images/Rowing.jpg"
 import HomeBackground from "../assets/images/HomeBackground.jpg"
@@ -9,7 +9,7 @@ export default function Home() {
     const navigate = useNavigate()
 
     function handleNavigate() {
-        navigate("/cities")
+        navigate("cities")
     }
 
     return (

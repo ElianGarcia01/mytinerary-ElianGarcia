@@ -1,23 +1,32 @@
-import backgroundCities from "../assets/images/CitiesBackground.jpg"
+import Card from "../components/Card/Card";
+import SearchBar from "../components/SearchBar/SearchBar";
 
 export default function Cities() {
-    return (
-        <>
-            <section className="h-[100vh] font-stretch-normal relative">
-                <img src={backgroundCities} alt="" className="h-full w-full shadow-2xl object-cover" />
+  return (
+    <>
+      {/* HERO SECTION */}
+      <section className="h-[60vh] font-stretch-normal bg-cover bg-center bg-[url('./assets/images/cities3.jpg')] relative">
+        <div className="absolute inset-0 bg-black/35 md:bg-black/55"></div>
 
-                <div className="absolute inset-0 bg-black/35"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+        text-center flex flex-col items-center space-y-3">
+          <h2 className="text-white text-4xl font-bold">Cities</h2>
 
-                <div className="absolute inset-0 flex flex-col justify-center items-center">
+          <p className="text-white text-2xl italic">
+            Collection of the most beautiful <br />
+            places and experience
+          </p>
+        </div>
+      </section>
 
-                    <h1 className="text-gray-100 font-stretch-normal text-2xl md:text-5xl mb-8">
-                        Under Maintenance
-                    </h1>
+        {/* CARDS SECTIONS */}
+      <section className="bg-white min-h-screen">
+        <SearchBar></SearchBar>
 
-                    {/* Círculo de carga (skeleton) */}
-                    <div className="w-8 h-8 md:w-12 md:h-12 border-4 border-gray-200 border-t-transparent rounded-full animate-spin"></div>
-                </div>
-            </section>
-        </>
-    )
+        <div>
+            <Card></Card>
+        </div>
+      </section>
+    </>
+  );
 }
