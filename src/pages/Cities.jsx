@@ -22,7 +22,7 @@ export default function Cities() {
       </section>
 
       {/* CARDS SECTION */}
-      <section className="bg-white min-h-screen">
+      <section className="bg-gray-200 min-h-screen">
         <h2 className="text-center text-4xl font-bold pt-12 text-gray-800 tracking-wide flex items-center justify-center gap-3">
           Find Amazing Cities
           <FaTreeCity className="text-blue-600 animate-pulse" />
