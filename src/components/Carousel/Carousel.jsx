@@ -37,7 +37,7 @@ const Carousel = () => {
     <div className="w-full max-w-7xl mx-auto mt-2 h-full">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={5}
+        spaceBetween={2}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
@@ -52,8 +52,8 @@ const Carousel = () => {
         className="w-full h-full"
       >
         {itineraries.map((item) => (
-          <SwiperSlide key={item.id} className="px-8 md:px-3.5 py-8">
-            <div className="relative h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl text-md">
+          <SwiperSlide key={item.id} className="px-10 py-8">
+            <div className="relative w-full h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl text-md">
               <img
                 src={item.image}
                 alt={item.name}

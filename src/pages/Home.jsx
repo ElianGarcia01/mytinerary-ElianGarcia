@@ -45,7 +45,7 @@ export default function Home() {
       </section>
 
       {/* MAIN CONTENT */}
-      <div className="w-full py-12 space-y-16 bg-white text-black flex flex-col justify-between items-center">
+      <div className="w-full py-12 space-y-16 bg-gray-200 text-black flex flex-col justify-between items-center">
         {/* CAROUSEL POPULAR ITINERARIES */}
         <section className="text-center rounded-2xl container shadow-2xl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl text-black">
