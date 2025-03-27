@@ -4,6 +4,7 @@ import HomeLayout from './layouts/HomeLayout'
 import Home from './pages/Home'
 import Cities from './pages/Cities'
 import NotFound from './pages/NotFound'
+import CityDetails from './components/CityDetails/CityDetails'
 
 function App() {
 
@@ -24,6 +25,10 @@ function App() {
           path: "cities",
           element: <Cities />
         },
+        {
+          path: "cities/details/:cityId", // Nueva ruta para la página de detalles
+          element: <CityDetails />
+        }
       ]
     },
     {
