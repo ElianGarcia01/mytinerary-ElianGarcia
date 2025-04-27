@@ -1,4 +1,4 @@
-import Card from "../components/Card/Card"
+import ContainerCard from "../components/Card/ContainerCard"
 import { FaTreeCity } from "react-icons/fa6"
 
 export default function Cities() {
@@ -31,7 +31,7 @@ export default function Cities() {
           Explore the world&apos;s most beautiful cities and find your next
           adventure.
         </p>
-        <Card />
+        <ContainerCard />
       </section>
     </>
   )

@@ -4,7 +4,7 @@ import HomeLayout from './layouts/HomeLayout'
 import Home from './pages/Home'
 import Cities from './pages/Cities'
 import NotFound from './pages/NotFound'
-import CityDetails from './components/CityDetails/CityDetails'
+import CityDetails from './pages/CityDetails/CityDetails'
 
 function App() {
 
