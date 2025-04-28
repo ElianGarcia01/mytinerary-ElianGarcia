@@ -20,7 +20,6 @@ function Card({ city }) {
       >
         <div className="h-full w-full bg-black/30 flex items-start p-4">
           <h3 className="text-lg font-semibold">
-            <FaLocationDot className="inline-block mr-2 text-red-500" />
             {city.name_city}, {city.country}
           </h3>
         </div>

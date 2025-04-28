@@ -1,15 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  FaArrowLeft,
-  FaMapMarkerAlt,
-  FaSpinner,
-} from "react-icons/fa";
+import { FaArrowLeft, FaMapMarkerAlt, FaSpinner } from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useDispatch, useSelector } from "react-redux";
 import getItineraries from "../../redux/actions/ItineraryAction";
-import { FaClock, FaMoneyBill1Wave } from "react-icons/fa6";
+import {
+  FaArrowDown,
+  FaClock,
+  FaFaceSmile,
+  FaMoneyBill1Wave,
+  FaMountainCity,
+} from "react-icons/fa6";
 
 function CityDetails() {
   const location = useLocation();
@@ -38,8 +40,6 @@ function CityDetails() {
     );
   }
 
-  console.log(itineraries);
-
   if (!city) {
     return (
       <div className="text-center min-h-screen flex flex-col justify-center items-center">
@@ -65,26 +65,38 @@ function CityDetails() {
         items-center text-white"
         style={{ backgroundImage: `url(${city.image})` }}
       >
-        <h1 className="text-4xl font-extrabold mt-72">
+        <h1 className="text-3xl lg:text-4xl font-extrabold mt-72">
           <FaMapMarkerAlt className="inline-block mr-2 text-red-500" />
           {city.name_city}, {city.country}
         </h1>
-        <p className="text-lg mt-6 max-w-2xl text-center bg-black/50 p-4 rounded-2xl italic">
+        <p className="text-md lg:text-2xl mt-6 max-w-2xl text-center bg-black/30 p-4 rounded-2xl italic">
           {city.description ||
             "A wonderful city full of amazing places to visit."}
         </p>
         <Link
           to="/cities"
           className="inline-flex items-center mt-4 bg-blue-600 hover:bg-blue-800
-        font-lg px-3 py-1 rounded-lg"
+        font-lg px-3 py-2 rounded-lg"
         >
           <FaArrowLeft className="mr-2" />
           Back to cities
         </Link>
+
+        <button
+          onClick={() => {
+            const section = document.getElementById("itineraries");
+            section?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="inline-flex items-center mt-4 bg-black hover:bg-gray-700
+        font-lg px-3 py-3 rounded-xl cursor-pointer"
+        >
+          <FaArrowDown className="mr-2" />
+          View itineraries
+        </button>
       </div>
 
       {/* Itinerarios */}
-      <div className="container mx-auto px-4 py-10">
+      <div className="container mx-auto px-4 py-10" id="itineraries">
         <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">
           Itineraries
         </h2>
@@ -93,7 +105,10 @@ function CityDetails() {
           <div className="flex flex-col gap-8 justify-center items-center">
             {/* Cards de itinerarios */}
             {itineraries.map((itinerary, index) => (
-              <div key={index} className="bg-gray-100 w-1/3 rounded-xl shadow-2xl pb-2">
+              <div
+                key={index}
+                className="bg-gray-100 w-full lg:w-1/3 rounded-xl shadow-2xl pb-2"
+              >
                 <img
                   src={itinerary.image}
                   alt={itinerary.title}
@@ -105,7 +120,6 @@ function CityDetails() {
 
                 {/* Seccion de usarios e informacion del itinerario */}
                 <div className="flex">
-
                   {/* Foto y nombre del usuario */}
                   <div className="w-full flex  justify-center items-center gap-2 mb-2 px-2">
                     <img
@@ -132,7 +146,7 @@ function CityDetails() {
                 </div>
 
                 {/* Iterando arreglos de hashtags */}
-                <div className="flex justify-center items-center mb-4 font-bold text-white">
+                <div className="flex flex-wrap justify-center items-center mb-4 font-bold text-white">
                   {itinerary.hashtags.map((tag, i) => (
                     <span
                       className="flex items-center m-1 rounded-full px-4 py-2 bg-blue-600 hover:bg-blue-700"
@@ -171,9 +185,19 @@ function CityDetails() {
             ))}
           </div>
         ) : (
-          <p className="text-gray-500 text-lg text-center">
-            No itineraries available yet.
-          </p>
+          <div className="w-full h-full flex justify-center items-center">
+            <div className="lg:w-1/3 bg-gray-400 rounded-2xl p-4 py-8 text-black text-lg text-center">
+              <FaMountainCity className="text-8xl inline-block" />
+              <h3 className="text-2xl font-bold">
+                No itineraries available yet.
+              </h3>
+              <p className="text-lg mt-6">
+                Currently, there are no itineraries available for this city.
+                Check back later for updates!
+                <FaFaceSmile className="inline-block ml-4 text-3xl" />
+              </p>
+            </div>
+          </div>
         )}
       </div>
     </div>

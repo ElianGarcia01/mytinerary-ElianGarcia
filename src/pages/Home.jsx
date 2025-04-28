@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="h-screen max-h-[100vh] w-full object-cover">
+      <section className="h-screen w-full object-cover">
         <img
           src={HomeBackground}
           alt=""
@@ -25,8 +25,7 @@ export default function Home() {
 
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center space-y-12 sm:space-y-16">
           <h1
-            className="text-gray-100 font-bold text-4xl
-            sm:text-5xl md:text-6xl lg:text-5xl drop-shadow-lg"
+            className="text-gray-100 font-bold text-3xl lg:text-4xl drop-shadow-lg"
           >
             My Tineraries
           </h1>
@@ -36,8 +35,8 @@ export default function Home() {
           </p>
           <button
             onClick={handleNavigate}
-            className="text-black mt-8 text-xl w-48 bg-white/90 hover:bg-white transition px-6 py-3
-                    rounded-lg font-bold shadow-lg blink-effect cursor-pointer"
+            className="text-black mt-8 lg:text-xl w-48 bg-white/90 hover:bg-white
+            transition py-2 lg:py-3 rounded-lg font-bold shadow-lg blink-effect cursor-pointer"
           >
             Explore Now!
           </button>
