@@ -1,42 +1,29 @@
 import { createReducer } from "@reduxjs/toolkit";
 import getItineraries from "../actions/ItineraryAction";
+import { statusHttp } from "./cityReducer";
 
-const statusHttp = {
-  IDLE: "idle",
-  SUCCED: "succes",
-  FAILE: "failed",
-  PENDING: "pending",
-};
-
-const itinerariesState = {
+const initialState = {
   itineraries: [],
   status: statusHttp.IDLE,
   error: null,
 };
 
-const initialState = {
-  itinerariesState: itinerariesState,
-};
-
 const itineraryReducer = createReducer(initialState, (builder) => {
   builder.addCase(getItineraries.fulfilled, (state, action) => {
     console.log("La solicitud fue exitosa");
-    const itinerariesState = state.itinerariesState;
-    itinerariesState.itineraries = action.payload;
-    itinerariesState.status = statusHttp.SUCCED;
+    state.itineraries = action.payload;
+    state.status = statusHttp.SUCCED;
   });
 
   builder.addCase(getItineraries.pending, (state) => {
     console.log("La solicitud fue pending");
-    const itinerariesState = state.itinerariesState;
-    itinerariesState.status = statusHttp.PENDING;
+    state.status = statusHttp.PENDING;
   });
 
   builder.addCase(getItineraries.rejected, (state, action) => {
     console.log("La solicitud fue error");
-    const itinerariesState = state.itinerariesState;
-    itinerariesState.status = statusHttp.PENDING;
-    itinerariesState.error = action.error;
+    state.status = statusHttp.FAILED;
+    state.error = action.error;
   });
 });
 

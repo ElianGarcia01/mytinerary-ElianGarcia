@@ -26,7 +26,7 @@ function App() {
           element: <Cities />
         },
         {
-          path: "cities/details/:cityId", // Nueva ruta para la página de detalles
+          path: "cities/details",
           element: <CityDetails />
         }
       ]

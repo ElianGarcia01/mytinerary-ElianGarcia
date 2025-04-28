@@ -20,7 +20,7 @@ function Card({ city }) {
       >
         <div className="h-full w-full bg-black/30 flex items-start p-4">
           <h3 className="text-lg font-semibold">
-            <FaLocationDot className="inline-block mr-2" />
+            <FaLocationDot className="inline-block mr-2 text-red-500" />
             {city.name_city}, {city.country}
           </h3>
         </div>
@@ -40,7 +40,7 @@ function Card({ city }) {
         </div>
 
         {/* Botón de Details */}
-        <Link to={`/cities/details/${city._id}`} className="w-full">
+        <Link to={"/cities/details"} state={{ city: city}} className="w-full">
           <button className="w-full bg-blue-500 hover:bg-blue-600 transition-all duration-300 text-white font-semibold py-2 rounded-lg shadow-md flex justify-center items-center cursor-pointer">
             View More
             <FaEye className="inline-block ml-2" />

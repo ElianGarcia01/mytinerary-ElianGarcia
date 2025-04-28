@@ -18,7 +18,7 @@ function ContainerCard() {
   }, [dispatch]);
 
   // Estados globales
-  const { cities, status } = useSelector((state) => state.city.citiesState);
+  const { cities, status } = useSelector((state) => state.city);
 
   const { search } = useSelector((state) => state.search);
 

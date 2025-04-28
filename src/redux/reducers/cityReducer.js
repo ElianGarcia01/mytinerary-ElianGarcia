@@ -8,36 +8,28 @@ export const statusHttp = {
   FAILED: "failed",
 }
 
-const citiesState = {
+const initialState = {
   cities: [],
   status: statusHttp.IDLE,
   error: null,
 }
 
-const initialState = {
-  citiesState: citiesState,
-};
-
-
 const cityReducer = createReducer(initialState, (builder) => {
     builder.addCase(getCities.fulfilled, (state, action) => {
         console.log("La solicitud fue exitosa");
-        const citiesState = state.citiesState;
-        citiesState.cities = action.payload;
-        citiesState.status = statusHttp.SUCCED;
+        state.cities = action.payload;
+        state.status = statusHttp.SUCCED;
       });
     
       builder.addCase(getCities.pending, (state) => {
         console.log("La solicitud es pending");
-        const citiesState = state.citiesState;
-        citiesState.status = statusHttp.PENDING;
+        state.status = statusHttp.PENDING;
       });
     
       builder.addCase(getCities.rejected, (state, action) => {
         console.log("La solicitud fue error");
-        const citiesState = state.citiesState;
-        citiesState.status = statusHttp.FAILED;
-        citiesState.error = action.error;
+        state.status = statusHttp.FAILED;
+        state.error = action.error;
       });
 })
 
