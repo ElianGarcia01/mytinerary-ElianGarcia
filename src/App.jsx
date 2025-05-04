@@ -55,8 +55,6 @@ function App() {
           },
         }
       );
-      console.log("DATA QUE LLEGA:", response.data);
-
       return response.data;
     } catch (error) {
       console.log(error);

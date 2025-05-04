@@ -9,7 +9,6 @@ const login = createAsyncThunk('auth/login', async ({email, password},{rejectWit
         return response.data
     } catch (error) {
         if (error.response) {
-            console.log(error.response)
             return rejectWithValue(error.response.data.message)
         }
     }
