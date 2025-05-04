@@ -3,6 +3,7 @@ import ButtonLogin from "./ButtonLogin"
 import { NavLink } from "react-router-dom"
 import { FaTimes } from "react-icons/fa"
 import { FaBars } from "react-icons/fa6"
+import LogoutButton from "./ButtonLogOut"
 
 function Header() {
   // ESTADO Y FUNCION PARA ABRIR Y CERRAR EL NAVBAR EN PANTALLAS PEQUEÑAS
@@ -40,14 +41,14 @@ function Header() {
               <NavLink
                 to={route.path}
                 className={({ isActive }) =>
-                  isActive ? "text-gray-300" : "text-white"
+                  isActive ? "text-gray-300" : "text-white hover:text-gray-300"
                 }
               >
                 {route.name}
               </NavLink>
             </li>
           ))}
-          <ButtonLogin />
+          <LogoutButton />
         </ul>
 
         {/* Ícono de hamburguesa (visible en pantallas pequeñas) */}
@@ -72,20 +73,20 @@ function Header() {
           <ul className="flex flex-col space-y-4 p-4">
             {routes.map((route) => (
               <li
-                className="hover:text-gray-300 text-xl font-bold"
+                className="text-xl font-bold"
                 key={route.path}
               >
                 <NavLink
                   to={route.path}
                   className={({ isActive }) =>
-                    isActive ? "text-gray-300" : "text-white"
+                    isActive ? "text-gray-300" : "text-white hover:text-gray-300"
                   }
                 >
                   {route.name}
                 </NavLink>
               </li>
             ))}
-            <ButtonLogin />
+          <LogoutButton />
           </ul>
         </div>
       )}

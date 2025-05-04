@@ -35,8 +35,8 @@ export default function Home() {
           </p>
           <button
             onClick={handleNavigate}
-            className="text-black mt-8 lg:text-xl w-48 bg-white/90 hover:bg-white
-            transition py-2 lg:py-3 rounded-lg font-bold shadow-lg blink-effect cursor-pointer"
+            className="text-black mt-8 lg:text-2xl w-44 bg-white/90 hover:bg-white
+            transition py-2 rounded-lg font-bold shadow-lg blink-effect cursor-pointer"
           >
             Explore Now!
           </button>

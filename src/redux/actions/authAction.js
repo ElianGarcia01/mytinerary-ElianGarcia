@@ -15,5 +15,7 @@ const login = createAsyncThunk('auth/login', async ({email, password},{rejectWit
 })
 
 const setUser = createAction('auth/setUser')
+const logout = createAction('auth/logout')
 
-export {login, setUser}
+
+export {login, setUser, logout}

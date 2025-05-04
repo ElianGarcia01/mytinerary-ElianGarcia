@@ -10,6 +10,8 @@ import { useEffect } from 'react'
 import { setUser } from './redux/actions/authAction'
 import axios from 'axios'
 import LoginForm from './pages/Login'
+import PrivateRouter from './components/privateRouter'
+import AuthRoute from './components/AuthRoute'
 
 const router = createBrowserRouter([
   {
@@ -18,25 +20,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Home />
-      },
-      {
-        path: "home",
-        element: <Home />
+        element: <PrivateRouter><Home /></PrivateRouter>
       },
       {
         path: "cities",
-        element: <Cities />
+        element: <PrivateRouter><Cities /></PrivateRouter>
       },
       {
         path: "cities/details",
-        element: <CityDetails />
+        element: <PrivateRouter><CityDetails /></PrivateRouter>
       },
     ]
   },
   {
     path: "login",
-    element: <LoginForm />
+    element: <AuthRoute><LoginForm /></AuthRoute>
   },
   {
     path: "*",

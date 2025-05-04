@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket, faX } from "@fortawesome/free-solid-svg-icons";
-import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 import { login } from "../redux/actions/authAction";
 import { statusHttp } from "../redux/reducers/cityReducer";
+import { FaUserPlus } from "react-icons/fa6";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -22,10 +22,10 @@ const LoginForm = () => {
   const error = authStore.error;
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-800 px-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm"
+        className="bg-gray-100 p-8 rounded-2xl shadow-lg w-full max-w-sm"
       >
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Login
@@ -63,14 +63,18 @@ const LoginForm = () => {
           Login
           <FontAwesomeIcon icon={faRightFromBracket} className="ms-2" />
         </button>
+
+        <button
+          type="submit"
+          className="w-full bg-black hover:bg-gray-700 text-white font-semibold py-2
+          px-4 mt-2 rounded-xl transition duration-300 cursor-pointer"
+        >
+          Sign Up
+          <FaUserPlus icon={faRightFromBracket} className="inline-block ms-2" />
+        </button>
+
         {status === statusHttp.PENDING && (
           <p className="text-center mt-2 font-semibold">Loading...</p>
-        )}
-        {status === statusHttp.SUCCED && (
-          <p className="text-center mt-2 font-semibold">
-            Iniciaste sesión exitosamente
-            <FontAwesomeIcon icon={faCheck} className="ms-2 font-bold bg-green-500
-            text-xl text-white rounded-full" />          </p>
         )}
         {error && (
           <p className="text-center mt-2 font-semibold">{error}
