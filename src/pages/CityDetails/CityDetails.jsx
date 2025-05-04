@@ -1,12 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FaArrowLeft, FaMapMarkerAlt, FaSpinner } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaChevronDown,
+  FaMapMarkerAlt,
+  FaSpinner,
+} from "react-icons/fa";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useDispatch, useSelector } from "react-redux";
 import getItineraries from "../../redux/actions/ItineraryAction";
 import {
-  FaArrowDown,
+  FaChevronUp,
+  FaCircleArrowDown,
   FaClock,
   FaFaceSmile,
   FaMoneyBill1Wave,
@@ -90,7 +96,7 @@ function CityDetails() {
           className="inline-flex items-center mt-4 bg-black hover:bg-gray-700
         font-lg px-3 py-3 rounded-xl cursor-pointer"
         >
-          <FaArrowDown className="mr-2" />
+          <FaCircleArrowDown className="mr-2" />
           View itineraries
         </button>
       </div>
@@ -166,10 +172,15 @@ function CityDetails() {
                         [index]: !prev[index],
                       }))
                     }
-                    className="mt-auto bg-gray-600 hover:bg-gray-800 text-white py-1 px-3 rounded
+                    className="mt-auto pb-2 bg-gray-600 hover:bg-gray-800 text-white py-1 px-3 rounded
                      transition cursor-pointer font-semibold"
                   >
                     Activities
+                    {showDetails[index] ? (
+                      <FaChevronUp className="inline-block ms-2 text-md" />
+                    ) : (
+                      <FaChevronDown className="inline-block ms-2 text-md" />
+                    )}
                   </button>
                 </div>
 

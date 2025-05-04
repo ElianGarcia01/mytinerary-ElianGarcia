@@ -56,13 +56,13 @@ export default function Home() {
         </section>
 
         {/* FEATURED DESTINATIONS */}
-        <section className="rounded-2xl container shadow-2xl p-6 w-full">
+        <section className="rounded-2xl container shadow-2xl p-6 w-full pb-10">
           <h2 className="text-center text-2xl sm:text-3xl md:text-4xl mb-8">
             Top Destinations
           </h2>
           <div className="flex flex-col-reverse md:flex-row-reverse justify-center items-center gap-4">
             <div className="flex flex-col gap-8 mt-8 text-center">
-              <div className="bg-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+              <div className="bg-gray-200 rounded-lg p-6 shadow-xl transition">
                 <h3 className="text-xl font-semibold text-gray-800">
                   Paris, France
                 </h3>
@@ -71,7 +71,7 @@ export default function Home() {
                   breathtaking landmarks.
                 </p>
               </div>
-              <div className="bg-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+              <div className="bg-gray-200 rounded-lg p-6 shadow-xl transition">
                 <h3 className="text-xl font-semibold text-gray-800">
                   Tokyo, Japan
                 </h3>
@@ -80,7 +80,7 @@ export default function Home() {
                   capital.
                 </p>
               </div>
-              <div className="bg-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition">
+              <div className="bg-gray-200 rounded-lg p-6 shadow-xl transition">
                 <h3 className="text-xl font-semibold text-gray-800">
                   New York, USA
                 </h3>
