@@ -65,12 +65,16 @@ function App() {
     const token = localStorage.getItem("token");
     if (token) {
       loginWithToken(token).then((user) => {
-        const authTemp = { user, token };
-        dispatch(setUser(authTemp));
+        if (user) {
+          const authTemp = { user, token };
+          dispatch(setUser(authTemp));
+        } else {
+          localStorage.removeItem("token");
+        }
       });
     }
   }, [dispatch]);
-
+  
 
   return (
     <>

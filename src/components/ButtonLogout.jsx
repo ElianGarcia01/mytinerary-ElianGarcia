@@ -1,15 +1,27 @@
 import { FaDoorOpen } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
-import { logout } from "../redux/actions/authAction";
+import { signOut } from "../redux/actions/authAction";
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function LogoutButton() {
   
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  function handleLogout() {
-    dispatch(logout())
-    localStorage.removeItem('token')
+// En tu componente de logout
+const handleLogout = async () => {
+  try {
+      await dispatch(signOut()).unwrap()
+      navigate('/login')
+      toast.success('Sesión cerrada correctamente') // Ejemplo con react-toastify
+  } catch (error) {
+      toast.error('Ocurrió un error al cerrar sesión', error)
+      navigate('/login') // Redirigir igualmente
   }
+}
+
 
   return (
     <button
