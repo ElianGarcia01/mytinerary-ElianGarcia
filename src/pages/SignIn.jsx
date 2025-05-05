@@ -6,6 +6,7 @@ import { faRightFromBracket, faX } from "@fortawesome/free-solid-svg-icons";
 import { login } from "../redux/actions/authAction";
 import { statusHttp } from "../redux/reducers/cityReducer";
 import GoogleLoginButton from "../components/AuthButton/GoogleLoginButton";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -75,6 +76,13 @@ const LoginForm = () => {
             <FontAwesomeIcon icon={faX} className="ms-2 text-red-500" />
           </p>
         )}
+
+        <p className="mt-6 text-center text-sm text-gray-600">
+          Already have an account?{" "}
+          <Link to="/signUp" className="text-blue-500 font-bold hover:underline">
+            Sign Up here
+          </Link>
+        </p>
       </form>
     </div>
   );
