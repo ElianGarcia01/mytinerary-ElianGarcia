@@ -73,23 +73,27 @@ const signUp = createAsyncThunk(
   }
 )
 
+
 const signInWithGoogle = createAsyncThunk(
-    "auth/googleSignIn",
-    async (googleToken, { rejectWithValue }) => {
-      try {
-        const response = await axios.post(
-          "http://localhost:8080/api/auth/google",
-          { token: googleToken }
-        );
-  
-        localStorage.setItem("token", response.data.token);
-        return response.data;
-      } catch (error) {
-        return rejectWithValue("Google login failed:", error);
+  "auth/signInWithGoogle",
+  async (googleToken, { rejectWithValue }) => {
+    try {
+      const response = await axios.post("http://localhost:8080/api/auth/google", {
+        token: googleToken,
+      });
+
+      // Guardar token en localStorage
+      localStorage.setItem("token", response.data.token);
+
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        return rejectWithValue(error.response.data.message);
       }
+      return rejectWithValue("Google login failed");
     }
-  );
-  
+  }
+);
   
 
 const setUser = createAction("auth/setUser");

@@ -63,21 +63,20 @@ export const authReducer = createReducer(initialState, (builder) => {
             state.user = null;
             state.token = null;
           })
-          .addCase(signInWithGoogle.pending, (state) => {
-            state.status = 'pending';
-            state.error = null;
-          })
           .addCase(signInWithGoogle.fulfilled, (state, action) => {
             state.user = action.payload.user;
             state.token = action.payload.token;
-            state.status = 'succeded';
+            state.status = "succeded";
             state.error = null;
-          })
-          .addCase(signInWithGoogle.rejected, (state, action) => {
-            state.status = 'failed';
+        })
+        .addCase(signInWithGoogle.pending, (state) => {
+            state.status = "pending";
+            state.error = null;
+        })
+        .addCase(signInWithGoogle.rejected, (state, action) => {
+            state.status = "failed";
             state.error = action.payload;
             state.user = null;
             state.token = null;
-          })
-          
+        })          
 })
