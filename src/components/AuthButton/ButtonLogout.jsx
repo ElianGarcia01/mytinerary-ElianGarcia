@@ -1,6 +1,6 @@
 import { FaDoorOpen } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
-import { signOut } from "../redux/actions/authAction";
+import { signOut } from "../../redux/actions/authAction";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,23 +10,22 @@ export default function LogoutButton() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-// En tu componente de logout
-const handleLogout = async () => {
+  const handleLogout = async () => {
   try {
       await dispatch(signOut()).unwrap()
       navigate('/login')
-      toast.success('Sesión cerrada correctamente') // Ejemplo con react-toastify
+      toast.success('Sesión cerrada correctamente')
   } catch (error) {
       toast.error('Ocurrió un error al cerrar sesión', error)
-      navigate('/login') // Redirigir igualmente
+      navigate('/login')
   }
 }
 
-
   return (
     <button
-      className="bg-black text-white lg:text-lg px-2 rounded-lg 
-        gap-2 hover:bg-gray-700 transition w-1/3 h-full lg:h-10 lg:w-32 cursor-pointer"
+      className="bg-black text-white text-lg
+        px-3 rounded-lg hover:bg-gray-800 transition h-full
+        w-full cursor-pointer"
       onClick={handleLogout}
     >
       Log Out

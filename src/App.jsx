@@ -9,9 +9,11 @@ import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { setUser } from './redux/actions/authAction'
 import axios from 'axios'
-import LoginForm from './pages/Login'
+import LoginForm from './pages/SignIn'
 import PrivateRouter from './components/privateRouter'
 import AuthRoute from './components/AuthRoute'
+import AuthLayout from './layouts/AuthLayaout'
+import SignUpForm from './pages/SignUp'
 
 const router = createBrowserRouter([
   {
@@ -33,8 +35,18 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "login",
-    element: <AuthRoute><LoginForm /></AuthRoute>
+    path: "/",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "login",
+        element: <AuthRoute><LoginForm /></AuthRoute>
+      },
+      {
+        path: "signUp",
+        element: <AuthRoute><SignUpForm /></AuthRoute>
+      }
+    ]
   },
   {
     path: "*",
